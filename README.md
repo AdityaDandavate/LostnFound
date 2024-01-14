@@ -23,20 +23,12 @@ Getting Started:
 
 As this project is incomplete, certain features and functionalities, including the notification system and anonymous communication, are yet to be implemented. To set up and explore the existing functionalities:
 
-1. Clone the repository: `git clone [repository_URL]`
-2. Configure MySQL connection in `config.php`
-3. Navigate to the project directory and run the setup script: `php setup.php`
-4. Run the PHP development server: `php -S localhost:8000`
+
+
 
 How to Contribute:
 
 We welcome contributions to complete and enhance the functionality of Lost and Found Web. If you'd like to contribute, please follow our contribution guidelines (CONTRIBUTING.md).
-
-Demo:
-
-A live demo of the incomplete Lost and Found Web project is available [here](demo-link).
-
-
 
 Contact:
 
