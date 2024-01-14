@@ -23,8 +23,7 @@ Getting Started:
 
 As this project is incomplete, certain features and functionalities, including the notification system and anonymous communication, are yet to be implemented. To set up and explore the existing functionalities:
 
-
-
+Image of the website:
 
 How to Contribute:
 
