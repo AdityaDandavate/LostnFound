@@ -1,0 +1,21 @@
+/* styles.css */
+.product-listing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-card {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 150px; /* Set a fixed height for all images */
+}
+
+.product-card h2 {
+    margin-top: 10px;
+}

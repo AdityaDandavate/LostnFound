@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0074d9;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>Here you can see requests uploaded by users</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>User name</th>
+                <th>Item lost by user</th>
+                <th>Description of lost item</th>
+                <th>Location of item lost</th>
+                <th>Date and Time of lost item</th>
+                <th>Image of lost Item</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>User 1</td>
+                <td>Phone</td>
+                <td>Gold color iPhone 12 Pro Max</td>
+                <td>Lost in canteen during lunch break</td>
+                <td>15/10/23, 12:30pm</td>
+                <td>Image not available</td>
+            </tr>
+            <tr>
+                <td>User 2</td>
+                <td>Bag</td>
+                <td>Blue color bag</td>
+                <td>Lost in library</td>
+                <td>29/09/23, 4:30pm</td>
+                <td>Image not available</td>
+            </tr>
+            <tr>
+                <td>User 3</td>
+                <td>Leather wallet</td>
+                <td>Black color leather wallet</td>
+                <td>Lost in lab 312 during lab lecture</td>
+                <td>18/9/23, 1:30pm</td>
+                <td>Image not available</td>
+            </tr>
+            <!-- Additional empty rows with editable input fields -->
+            <tr>
+                <td><input type="text" placeholder="Enter user name"></td>
+                <td><input type="text" placeholder="Enter item lost by user"></td>
+                <td><input type="text" placeholder="Enter description of lost item"></td>
+                <td><input type="text" placeholder="Enter location of item lost"></td>
+                <td><input type="text" placeholder="Enter date and time of lost item"></td>
+                <td><input type="text" placeholder="Enter image URL"></td>
+            </tr>
+            <tr>
+                <td><input type="text" placeholder="Enter user name"></td>
+                <td><input type="text" placeholder="Enter item lost by user"></td>
+                <td><input type="text" placeholder="Enter description of lost item"></td>
+                <td><input type="text" placeholder="Enter location of item lost"></td>
+                <td><input type="text" placeholder="Enter date and time of lost item"></td>
+                <td><input type="text" placeholder="Enter image URL"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

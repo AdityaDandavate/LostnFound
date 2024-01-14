@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        margin: 0;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    caption {
+        font-weight: bold;
+    }
+    th, td:nth-child(5) {
+        white-space: nowrap; /* Prevent line breaks in Category column */
+    }
+    img {
+        max-width: 100px; /* Limit image width */
+        height: auto; /* Maintain aspect ratio */
+    }
+   </style>
+</head>
+<body>
+    <h1>Welcome Admin</h1>
+    <table>
+        <caption>Here you can see the items found by clients & uploaded </caption>
+        <thead>
+            <tr>
+                <th>Item name</th>
+                <th>Description</th>
+               <th>Date found</th>
+               <th>Time found</th>
+               <th>Category</th>
+               <th>Item Image</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Item 1</td>
+            <td>Description of Item 1</td>
+            <td>Date Lost 1</td>
+            <td>Time Lost</td>
+            <td>Location 1</td>
+            <td>Category 1</td>
+            <td><img src="your_image_url_1.jpg" alt="Item 1 Image"></td>
+        </tr>
+        <tr>
+            <td>Item 2</td>
+            <td>Description of Item 2</td>
+            <td>Date Lost 2</td>
+            <td>Time Lost</td>
+            <td>Location 2</td>
+            <td>Category 2</td>
+            <td><img src="your_image_url_2.jpg" alt="Item 2 Image"></td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>

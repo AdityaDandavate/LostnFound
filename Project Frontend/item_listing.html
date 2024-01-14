@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Listing Page</title>
+    <link rel="stylesheet" href="item_listing.css">
+    <style>
+        /* Basic CSS styles (you can customize these) */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .product-listing {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px;
+        }
+
+        .product-card {
+            width: 300px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .product-card img {
+            max-width: 100%;
+        }
+
+        .claim-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Product Listings</h1>
+        <nav>
+            <ul>
+                <li><a href='home.html'>Home</a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <!-- Add more categories here -->
+            </ul>
+        </nav>
+        <div id="search">
+            <input type="text" id="searchInput" placeholder="Search for products...">
+            <button id="searchButton">Search</button>
+        </div>
+    </header>
+
+    <section class="product-listing">
+        <!-- Product Cards Go Here -->
+        <div class="product-card">
+            <img src="iphone.jpg" alt="Product 1">
+            <h2>iPhone 12 Pro Max</h2>
+            <button class="claim-button">Claim</button>
+        </div>
+        <div class="product-card">
+            <img src="bag.jpg" alt="Product 2">
+            <h2>Bag</h2>
+            <button class="claim-button">Claim</button>
+        </div>
+        <div class="product-card">
+            <img src="wallet.jpg" alt="Product 3">
+            <h2>Wallet</h2>
+            <button class="claim-button">Claim</button>
+        </div>
+        <!-- Add more product cards here -->
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Get references to the input field and search button
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+
+        // Get all product cards
+        const productCards = document.querySelectorAll('.product-card');
+
+        // Function to filter product cards based on search query
+        const filterProductCards = () => {
+            // Get the user's search query
+            const searchQuery = searchInput.value.toLowerCase();
+
+            // Loop through each product card and check if it matches the search query
+            productCards.forEach((card) => {
+                const productName = card.querySelector('h2').textContent.toLowerCase();
+                const cardDisplay = productName.includes(searchQuery) ? 'block' : 'none';
+                card.style.display = cardDisplay;
+            });
+        };
+
+        // Function to handle the "Claim" button click
+        const handleClaimButtonClick = (event) => {
+            // You can add your claim functionality here
+            // For now, let's just display an alert
+            const productName = event.target.previousElementSibling.textContent;
+            alert(`You've claimed the ${productName}!`);
+        };
+
+        // Add an event listener to the search button
+        searchButton.addEventListener('click', filterProductCards);
+
+        // Add an event listener to the input field to trigger filtering on input change
+        searchInput.addEventListener('input', filterProductCards);
+
+        // Add event listeners to all "Claim" buttons
+        const claimButtons = document.querySelectorAll('.claim-button');
+        claimButtons.forEach((button) => {
+            button.addEventListener('click', handleClaimButtonClick);
+        });
+    </script>
+</body>
+</html>

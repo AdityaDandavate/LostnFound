@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        caption {
+            font-weight: bold;
+        }
+        th, td:nth-child(6) {
+            white-space: nowrap; /* Prevent line breaks in Category column */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome Admin</h1>
+    
+    <table>
+        <caption>Here you can see the queries of our users for their lost items</caption>
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Description</th>
+                <th>Date Lost</th>
+                <th>Time Lost</th>
+                <th>Location</th>
+                <th>Category (Mention type eg: electronics)</th>
+                <th>Item Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Item 1</td>
+                <td>Description of Item 1</td>
+                <td>Date Lost 1</td>
+                <td>Time Lost</td>
+                <td>Location 1</td>
+                <td>Category 1</td>
+                <td>Image display (working on image display)</td>
+            </tr>
+            <tr>
+                <td>Item 2</td>
+                <td>Description of Item 2</td>
+                <td>Date Lost 2</td>
+                <td>Time Lost</td>
+                <td>Location 2</td>
+                <td>Category 2</td>
+                <td>Image display (working on image display)</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

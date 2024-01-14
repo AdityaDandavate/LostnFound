@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found</title>
+    <style>
+        h1 {
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome User</h1>
+    </header>
+    
+    <form>
+        <div>
+            <p>Upload an image of the lost item:</p>
+            <input type="file" id="itemImage" accept="image/*">
+        </div>
+        
+        <div>
+            <p>Please specify the item found:</p>
+            <input type="text" id="foundItem" placeholder="Item found">
+        </div>
+        
+        <div>
+            <p>Mention the place, date, and time you found the missing item:</p>
+            <input type="text" id="foundPlace" placeholder="Enter place">
+            <input type="datetime-local" id="foundDateTime">
+        </div>
+        
+        <div>
+            <input type="checkbox" id="submitCheckbox">
+            <label for="submitCheckbox">Submit</label>
+        </div>
+    </form>
+</body>
+</html>

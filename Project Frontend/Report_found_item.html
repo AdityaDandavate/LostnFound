@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fdfcfc;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        form {
+            margin: 0 auto;
+            width: 60%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        div {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="datetime-local"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label.upload-label {
+            display: block;
+            background-color: #3c28d3;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        label.checkbox-label {
+            font-weight: normal;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .terms-link {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome User</h1>
+    </header>
+    
+    <form action="response recorded.html" id="lostAndFoundForm">
+        <div>
+            <label for="itemImage" class="upload-label">Upload an image of the lost item</label>
+            <input type="file" id="itemImage" accept="image/*">
+        </div>
+        
+        <div>
+            <p>Please specify the item found:</p>
+            <input type="text" id="foundItem" placeholder="Item found" required>
+        </div>
+        
+        <div>
+            <p>Mention the place, date, and time you found the missing item:</p>
+            <input type="text" id="foundPlace" placeholder="Enter place" required>
+            <input type="datetime-local" id="foundDateTime" required>
+        </div>
+        
+        <div>
+            <input type="checkbox" id="submitCheckbox" required>
+            <label for="submitCheckbox" class="checkbox-label">I agree to the terms and conditions</label>
+        </div>
+        
+        <div class="terms-link">
+            <a href='termsncondi.html'>Terms & Conditions</a>
+        </div>
+        
+        <a href='response recorded.html'>
+            <input type="submit" value="Submit" id="submitButton" disabled>
+        </a>
+    </form>
+
+    <script>
+        // Function to check if all required fields are filled
+        function checkForm() {
+            const foundItem = document.getElementById('foundItem').value;
+            const foundPlace = document.getElementById('foundPlace').value;
+            const foundDateTime = document.getElementById('foundDateTime').value;
+            const submitCheckbox = document.getElementById('submitCheckbox');
+            const submitButton = document.getElementById('submitButton');
+
+            // Enable the submit button if all required fields are filled and the checkbox is checked
+            if (foundItem && foundPlace && foundDateTime && submitCheckbox.checked) {
+                submitButton.disabled = false;
+            } else {
+                // Disable the submit button if any required field is missing
+                submitButton.disabled = true;
+            }
+        }
+
+        // Add event listeners to input fields and checkbox to check the form on change
+        const inputFields = document.querySelectorAll('input[type="text"], input[type="datetime-local"], input[type="checkbox"]');
+        inputFields.forEach((field) => {
+            field.addEventListener('input', checkForm);
+        });
+
+        // Initially, disable the submit button
+        document.getElementById('submitButton').disabled = true;
+
+        // Show a pop-up message when trying to submit without filling all required fields
+        document.getElementById('lostAndFoundForm').addEventListener('submit', function(event) {
+            if (document.getElementById('submitButton').disabled) {
+                event.preventDefault();
+                alert('Please fill in all required fields and agree to the terms and conditions.');
+            }
+        });
+    </script>
+</body>
+</html>

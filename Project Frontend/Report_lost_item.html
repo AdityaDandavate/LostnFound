@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: red; /* Changed font color to red */
+            margin: 20px 0;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin: 10px;
+        }
+
+        input[type="text"],
+        input[type="datetime-local"] {
+            padding: 10px;
+            width: 80%;
+            max-width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+        }
+
+        input[type="checkbox"] {
+            margin: 10px;
+        }
+
+        input[type="submit"] {
+            padding: 12px 24px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="image"] {
+            width: 150px;
+            height: 150px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="image"]:hover {
+            opacity: 0.8;
+        }
+
+        /* Center-align the content */
+        .center-content {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="center-content"> <!-- Added a container for center alignment -->
+        <h1>Report Your Lost Item</h1> <!-- Changed the heading -->
+        <p>Feel free to upload details of your lost items:</p>
+        <label for="itemImage" class="upload-label">Upload an image of the lost item (optional)</label>
+        <input type="file" id="itemImage" accept="image/*"> <!-- Replace "your-image-url.jpg" with the actual image URL -->
+        <br>
+        <input type="text" id="itemLost" placeholder="Enter the item lost" required>
+        <br>
+        <input type="text" id="itemDescription" placeholder="Enter a description of the item lost" required>
+        <br>
+        <input type="datetime-local" id="datetime" required>
+        <br>
+        <input type="checkbox" id="termsCheckbox" required>
+       
+        <label for="termsCheckbox">I agree to the <a href="termsncondi.html">Terms & Conditions</a></label>
+        <br>
+    
+        <a href="response recorded.html">
+            <input type="submit" value="Submit" id="submitButton" disabled>
+        </a>
+    </div>
+
+    <script>
+        // Function to check if all required fields are filled
+        function checkForm() {
+            const itemLost = document.getElementById('itemLost').value;
+            const itemDescription = document.getElementById('itemDescription').value;
+            const datetime = document.getElementById('datetime').value;
+            const termsCheckbox = document.getElementById('termsCheckbox');
+            const submitButton = document.getElementById('submitButton');
+
+            // Enable the submit button if all required fields are filled
+            if (itemLost && itemDescription && datetime && termsCheckbox.checked) {
+                submitButton.disabled = false;
+            } else {
+                // Disable the submit button if any required field is missing
+                submitButton.disabled = true;
+            }
+        }
+
+        // Add event listeners to input fields to check the form on change
+        const inputFields = document.querySelectorAll('input[type="text"], input[type="datetime-local"], input[type="checkbox"]');
+        inputFields.forEach((field) => {
+            field.addEventListener('input', checkForm);
+        });
+
+        // Initially, disable the submit button
+        document.getElementById('submitButton').disabled = true;
+    </script>
+</body>
+</html>
